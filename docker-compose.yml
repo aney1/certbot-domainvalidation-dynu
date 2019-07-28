@@ -6,9 +6,4 @@ services:
         volumes:
             - /etc/letsencrypt/:/etc/letsencrypt/
             - ./scripts:/scripts/
-        logging:
-             driver: json-file
-             options:
-                 max-size: "10m"
-                 max-file: "1"
         command: certonly --manual-public-ip-logging-ok --non-interactive --agree-tos --email <PUT_YOUR_EMAIL_HERE> --manual --preferred-challenges=dns --manual-auth-hook /scripts/script-pre.sh --manual-cleanup-hook /scripts/script-post.sh -d YOURDOMAIN.TLD -d *.YOURDOMAIN.TLD
