@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 api_key='<PUT_YOUR_API_KEY_HERE>'
 domainID='<PUT_YOUR_DOMAIN_ID_HERE>'
 
