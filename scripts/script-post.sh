@@ -1,6 +1,8 @@
 #!/bin/bash
 api_key='<PUT_YOUR_API_KEY_HERE>'
-domainID='<PUT_YOUR_DOMAIN_ID_HERE>'
+#Get domainID:
+dns=$(curl -X GET https://api.dynu.com/v2/dns -H "accept: application/json" -H "API-Key: $api_key")
+domainID=$(echo $dns | jq ".domains[] | select(.name==\"$CERTBOT_DOMAIN\")" | jq '.id')
 
 while
         records=$(curl -s -X GET "https://api.dynu.com/v2/dns/$domainID/record" -H  "accept: application/json" -H "API-Key: $api_key")
