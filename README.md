@@ -1,4 +1,4 @@
-This repository conatins everything needed to create and renew LetsEncrypt certificates (incl. wildcard certificates) on Dynu (https://www.dynu.com/).
+This repository contains everything needed to create and renew LetsEncrypt certificates (incl. wildcard certificates) on Dynu (https://www.dynu.com/).
 This should work on every machine that can run docker (I'm using it on a QNAP NAS).
 If you already have certbot installed you can also just use the scripts in the scripts folder, without docker.
 
